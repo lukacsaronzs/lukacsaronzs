@@ -1,23 +1,24 @@
-import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
+import Head from "next/head";
+import Footer from "@components/Footer";
+import AboutMe from "@components/AboutMe";
+import Repos from "@components/Repos";
 
 export default function Home() {
   return (
-    <div className="container">
+    <div>
       <Head>
-        <title>Next.js Starter!</title>
+        <title>Lukács Áron</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <Header title="Welcome to my app!" />
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-      </main>
+      <div className="flex flex-col min-h-screen justify-between">
+        <main className="flex flex-row flex-grow justify-between gap-5">
+          <AboutMe />
+          <Repos />
+        </main>
 
-      <Footer />
+        <Footer />
+      </div>
     </div>
-  )
+  );
 }
