@@ -16,14 +16,13 @@ const handler = async (event) => {
         },
       }
     );
-    let repos = res.data.items;
     return {
       statusCode: 200,
       body: JSON.stringify(res.data.items),
     };
   } catch (err) {
     return {
-      statusCode: error.response.status,
+      statusCode: err.response.status,
       body: JSON.stringify(err.response.body),
     };
   }
